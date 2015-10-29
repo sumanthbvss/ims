@@ -117,7 +117,7 @@ public function addstaff() {
 
 		
                 $this->form_validation->set_rules('firstname', 'Firstname',  'required|min_length[2]|max_length[15]|alpha|');
-         $this->form_validation->set_rules('lastname', 'Lastname',  'required|min_length[2]|max_length[15]|alpha|');
+                $this->form_validation->set_rules('lastname', 'Lastname',  'required|min_length[2]|max_length[15]|alpha|');
                 $this->form_validation->set_rules('username', 'Username',  'required|min_length[5]|max_length[15]|alpha_numeric|');
                 $this->form_validation->set_rules('role', 'Role',  'required|alpha|');
                 $this->form_validation->set_rules('sex', 'Gender',  'required|alpha|');
@@ -125,7 +125,7 @@ public function addstaff() {
 		$this->form_validation->set_rules('email', 'Email',  'required|valid_email');
 		$this->form_validation->set_rules('mobile', 'Contact No.', 'required|regex_match[/^[0-9]{10}$/]');
 		$this->form_validation->set_rules('address', 'Address', 'required|min_length[10]|max_length[50]');
-
+                $this->form_validation->set_rules('location', 'Location', 'required');
                 
                 if ($this->form_validation->run() == FALSE)
 		{
@@ -150,7 +150,7 @@ public function addstaff() {
          $role = $this->input->post('role');
         $birth = $this->input->post('address');
         $mobile = $this->input->post('mobile');
-
+        $location = $this->input->post('location');
         
        
         $staff = array(
@@ -163,6 +163,7 @@ public function addstaff() {
             'sex' => $sex,
             'address' => $birth,
             'mobile' => $mobile,
+            'location' => $location,
         );
         
         $this->Staff_model->updatestaff($staff,$id);

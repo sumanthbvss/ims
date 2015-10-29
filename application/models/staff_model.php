@@ -56,6 +56,11 @@ class Staff_model extends CI_Model {
         return $row->role;
     }
 
+    public function get_location_by_username($username){
+        $location = $this->db->get_where('users', array('username' => $username))->row();
+        return $location->location;
+    }
+
     public function get_usernames() {
         $users = $this->db->select('username')
                 ->order_by('username')
@@ -94,7 +99,7 @@ class Staff_model extends CI_Model {
             return FALSE;
         }
 
-        $this->db->insert('users', array('username' => 'username', 'password' => md5('password'), 'firstname' => 'firstname', 'lastname' => 'lastname', 'email' => 'email', 'role' => 'role'));
+        $this->db->insert('users', array('username' => 'username', 'password' => md5('password'), 'firstname' => 'firstname', 'lastname' => 'lastname', 'email' => 'email', 'role' => 'role', 'location' => 'location'));
 
         return TRUE;
     }

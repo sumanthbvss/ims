@@ -82,20 +82,23 @@
         <?php echo form_label('Address :'); ?>
             <input type="text" name="daddress" id="daddress" value="<?php echo set_value('daddress'); ?>" size="50"/> <?php echo form_error('daddress'); ?><br />
               
-            <!-- added by team -->  
-            <div>
-                <label>Location</label>
-                <div>
+            <!-- new code -->
+            
+            <div class="control-group">
+                   <?php echo form_label('Location:'); ?> 
+                <div class="controls">
                     <select onchange="document.getElementById('displayValue3').value=this.options[this.selectedIndex].text; document.getElementById('idValue3').value=this.options[this.selectedIndex].value;">
                         <option ></option>
-                        <option value="staff">US</option>
-                        <option value="admin">UK</option>
-                    </select>
-                </div>
-            </div> </br>
-            <!-- added by team -->
-                   
-                   
+                        <option value="US">US</option>
+                        <option value="UK">UK</option>
+                    </select>   
+                    <input name="location" placeholder="" type="hidden" id="displayValue3"  onfocus="this.select()" type="text">
+                    <input name="idValue3" id="idValue3" type="hidden">
+                </div><?php echo form_error('idValue3'); ?>  
+            </div>
+            
+            <!-- end -->
+                          
                    
                    
             <input type="button" href="#myModal"  value='Add' role ="button" data-toggle="modal"class="btn btn-primary">

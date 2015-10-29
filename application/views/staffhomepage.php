@@ -7,9 +7,20 @@
 
     
    
-         <?php $this->load->view('viewworkorder'); ?>
-                     
-    
+          <?php
+        
+        $location = $this->Staff_model->get_location_by_username($this->session->userdata('username'));
+        echo $location;
+        if($location === 'UK')
+        {
+        
+         $this->load->view('ukviewworkorder'); 
+        }
+        else 
+        {
+            $this->load->view('viewworkorder'); 
+        }
+    ?>
              
             
  

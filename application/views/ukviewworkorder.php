@@ -309,7 +309,7 @@
 
 
  
-<table style="width: 40%;position: absolute;left:20%;top:20%;background-color:white;text-emphasis-color: black;">
+<table style="width: 40%;position: absolute;left:20%;top:20%;background-color:white;text-emphasis-color: black;" border='3'>
 <tr>
 <td height="119">
     <form id="form121" action="<?php echo site_url('workflow/formview') ?>" method="POST">
