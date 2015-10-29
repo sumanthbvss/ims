@@ -9,7 +9,6 @@
         <?php
         
         $location = $this->Staff_model->get_location_by_username($this->session->userdata('username'));
-        echo $location;
         if($location === 'UK')
         {
         
